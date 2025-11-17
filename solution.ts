@@ -112,8 +112,10 @@ const getUniqueValues = <T extends string | number>(arr1: T[], arr2: T[]) => {
   }
   return result;
 };
-const array1 = [1, 2, 3, 4, 5];
+const array1 = [1,1, 2, 3, 4, 5];
 const array2 = [3, 4, 5, 6, 7];
+
+
 
 const products = [
   { name: 'Pen', price: 10, quantity: 2 },
