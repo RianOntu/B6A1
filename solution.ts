@@ -31,4 +31,23 @@ class Person {
 }
 
 const person1 = new Person('John Doe', 30);
-person1.getDetails()
+person1.getDetails();
+
+
+
+const books = [
+  { title: 'Book A', rating: 4.5 },
+  { title: 'Book B', rating: 3.2 },
+  { title: 'Book C', rating: 5.0 },
+];
+
+type TitleAndRating = {
+  title: string;
+  rating: number;
+};
+
+const filterByRating = (items: TitleAndRating[]): TitleAndRating[] => {
+  return items.filter((item) => item.rating >= 4);
+};
+
+
