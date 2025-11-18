@@ -4,6 +4,7 @@ Answer:
 টাইপ সাধারণত কি : ভ্যালু আকারে থাকে। typeof ইউস করে আমরা টাইপের কীগুলো পেতে পারি, আর keyof সেই কীগুলোকে union টাইপ হিসেবে রিটার্ন করে।
 
 Example:
+```
 type Person = {
   name: string;
   age: number;
@@ -19,7 +20,7 @@ function getValue(obj: Person, key: PersonKeys) {
 
 const p: Person = { name: "Rian", age: 29, isStudent: false };
 console.log(getValue(p, "name")); // Output: Rian
-
+```
 3. Explain the difference between any, unknown, and never types in TypeScript.
 
 Answer:
@@ -31,16 +32,19 @@ unknown: যখন রিটার্ন টাইপ বা মানটি ক
 never: যখন কোনো ফাংশন কখনোই কিছু রিটার্ন করে না—যেমন infinite loop, বা error throw করা—তখন এই টাইপ ব্যবহার করা হয়।
 
 Example:
+```
 let data: any = 10;
 data = "Hello";  // OK
 data = true;     // OK
-
+```
+```
 let value: unknown = "Hello";
 
 if (typeof value === "string") {
   console.log(value.toUpperCase()); 
 }
-
+```
+```
 function throwError(msg: string): never {
   throw new Error(msg); 
 }
@@ -48,3 +52,5 @@ function throwError(msg: string): never {
 function infiniteLoop(): never {
   while (true) {}
 }
+
+```
